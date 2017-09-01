@@ -1,0 +1,41 @@
+
+## https://finbloggers.wordpress.com/2016/01/30/building-and-plotting-a-custom-indicator-in-r/
+
+library(quantmod)
+ 
+# read prices
+source("c:\\My Programs\\R\\Finance\\read.prices_function.r")
+data = read.prices()
+ 
+# show the tickers
+names(data)
+ 
+## [1] "G.MI"   "IBE.MC" "BNP.PA" "ENI.MI" "BAYN.DE" "REP.MC" "BMW.DE"
+## [8] "UG.PA"
+ 
+# we choose BMW.DE for this example. Let'use only the adjusted prices since the
+# beginning of 2012. The instruction "Ad" chooses the adjusted price only.
+ 
+BMW = Ad(data$BMW.DE)["2012::"]
+ 
+# Let's create a custom technical indicator that is the average of three simple
+# moving averages and let's call it Av.TripleSMA. First we define a R custom 
+# function that computes our indicator. We use simple moving averages (SMA)
+# computed on 21, 42 and 63 days (roughly 1, 2 and 3 months):
+ 
+Av.TripleSMA = function(x) {
+ATS = (SMA(x, 21) + SMA(x, 42) + SMA(x, 63))/3
+return(ATS)
+}
+ 
+# Then, we use the "newTA" instruction in order to make our indicator recognizable
+# by quantmod. The "on = 1" argument tells quantmod to draw the indicator on the
+# main plotting area of the chart (the same where the price is plotted).
+ 
+custom.indicator = newTA(FUN = Av.TripleSMA, legend.name = "Av. Triple SMA", on = 1)
+ 
+# Finally, we chart the price and the custom indicator with the following two
+# instructions:
+ 
+chartSeries(BMW, name = "BMW - Adj Prices", theme = chartTheme("white"))
+custom.indicator()
