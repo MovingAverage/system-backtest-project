@@ -7,7 +7,7 @@ Determine the type of market you want to trade then select a system to trade tha
 
 ## Systems
 # Trend
-Designed to take advantage of big moves. With a small winning % and loose money in a range bound enviroment. 
+Designed to take advantage of big moves. With a small winning % and lose money in a range bound enviroment. 
 
 Tools: moving averages, MACD, ADX, ATR, Channels, Regression
 
