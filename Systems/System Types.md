@@ -1,3 +1,5 @@
+*This is for personal research only*
+
 Determine the type of market you want to trade then select a system to trade that marke. Van Tharps SQN system to detemine market type. A System will only make money in the market it is designed for.
 
 ## Market types
@@ -41,3 +43,10 @@ Filter examples
 
 
 ## Money Management
+ 
+ examples:
+ - Fixed position size
+ - ATR based postion size
+ - scaling in and out
+ - More than one method combined
+ - multi account using different methods
