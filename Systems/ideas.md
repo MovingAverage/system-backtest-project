@@ -1,2 +1,0 @@
-- Test weekly data
-- 
