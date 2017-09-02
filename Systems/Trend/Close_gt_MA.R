@@ -1,11 +1,3 @@
-######################################################
-# Quantitative Trading Analysis with R               #
-# Trading Strategy: Trend-Following Momentum         #
-# Technical Indicators: MACD                         #
-# Optimization/Walk Forward Analysis: No/No          #
-# (c) Diego Fernandez Garcia 2016                    #
-# www.exfinsis.com                                   #
-######################################################
 
 # 1. Load R packages
 
