@@ -1,6 +1,6 @@
 
-https://www.r-bloggers.com/a-hammer-trading-system-demonstrating-custom-indicator-based-limit-orders-in-quantstrat/
-'''
+# https://www.r-bloggers.com/a-hammer-trading-system-demonstrating-custom-indicator-based-limit-orders-in-quantstrat/
+
 hammer <- function(OHLC, profMargin=1.5) {
   dailyMax <- pmax(Op(OHLC), Cl(OHLC))
   dailyMin <- pmin(Op(OHLC), Cl(OHLC))
@@ -27,4 +27,4 @@ add.indicator(strategy.st, name="hammer",
               arguments=list(OHLC=quote(OHLC(mktdata)), 
                              profMargin=profMargin),
               label="hammer")
- '''
+ 
